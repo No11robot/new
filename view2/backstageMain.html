@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱新闻，爱生活</title>
+    <link href="../css/admin.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+</head>
+<body>
+    <div id="top">
+	<h1 class="left">爱新闻 后台管理系统</h1>
+	<ul class="right">
+		<li>欢迎您：<{$smarty.session.us.uName}></li>
+		<li>|</li><li><a href="../controller/indexC.php" target="_blank">前台首页</a></li>
+		<li>|</li><li><a href="../controller2/quitC.php">退出登录</a></li>
+	</ul>
+    </div>
+<div id="main">
+    <div id="menu" class="left">
+	<ul><li><a href="../controller2/backstageC.php" id="Index_index">后台首页</a></li>
+            <li><a href="../controller2/addNewsC.php" id="news_add">添加新闻</a></li>
+            <li><a href="#" id="Category_index">分类管理</a>
+                <ul>
+                    <li><a href="../controller2/checkNewsC.php?sId=1&pageNow=1">国内</a></li>
+                    <li><a href="../controller2/checkNewsC.php?sId=2&pageNow=1">国际</a></li>
+                    <li><a href="../controller2/checkNewsC.php?sId=3&pageNow=1">体育</a></li>
+                    <li><a href="#">财经</a></li>
+                    <li><a href="../controller2/checkNewsC.php?sId=5&pageNow=1">军事</a></li>
+                    <li><a href="#">娱乐</a></li>
+                </ul>
+            </li>
+            <li><a href="../controller2/checkDiscloseC.php?pageNow=1" id="Category_index">新闻爆料</a></li>
+            <li><a href="../controller2/manageUsersC.php?pageNow=1" id="Member_index">用户管理</a></li>
+	</ul>
+    </div>
+    <{block name="contents"}><{/block}>
+</div>
+</body>
+</html>
+<{block name="jq"}><{/block}>
