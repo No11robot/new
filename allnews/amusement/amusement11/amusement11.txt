@@ -1,0 +1,45 @@
+--建表
+
+create table news(
+newsId number primary key,
+newsTitle varchar2(80) not null,
+newsDate date not null,
+newsContent varchar(4000) not null
+);
+
+--序列
+create sequence news_seq
+start with 1
+increment by 1
+minvalue 1
+nomaxvalue
+nocache
+nocycle
+/
+
+--插入数据
+insert into news values(1,'印尼又一警察局遭袭致警察1死2伤 4名歹徒遭射杀',to_date('2018-05-17 11:11:11','yyyy-mm-dd hh24:mi:ss'),'5月16日，印尼北干巴鲁，当地一警察总部遭袭，导致一名警察死亡，两人受伤。发动袭击的4人被射杀。');
+insert into news values(2,'台媒：解放军一架运-8型运输机飞近台湾海峡“中线”',to_date('2018-05-12 22:21:21','yyyy-mm-dd hh24:mi:ss'),'海外网5月17日消息，据台媒消息，解放军一架运-8型运输机今天（17日）上午10时20分，飞近台湾海峡“中线”，台媒10点37分左右发布消息时称，“目前仍在空中盘旋”，并称“台军在持续追踪”。截止目前，台防务部门并未回应。');
+insert into news values(3,'美国代表：今年美对华出口大豆预计将减少20%，美国农民的生活已受严重影响',to_date('2018-05-13 13:13:13','yyyy-mm-dd hh24:mi:ss'),'美国大豆出口商会中国区首席代表张小平接受中国日报专访时称，如果贸易纠纷不能及时解决的话，预计2018年美国大豆对华出口将减少百分之二十（基于2017年中国进口3600万吨美国大豆的历史记录）。商会呼吁美国政府尽快寻找有效途径解决贸易纠纷。目前的贸易纠纷已经严重影响到了美国农民的生活。');
+insert into news values(4,'中国首枚民营自研商业火箭发射成功!',to_date('2018-05-14 14:14:14','yyyy-mm-dd hh24:mi:ss'),'今早7:33,国内首枚民营自研商业火箭 “重庆两江之星“在西北某基地发射升空,这枚火箭从研发到最终的发射仅用了1年时间,所有的设计工作全部由一个平均年龄为85后的年轻团队完成!中国加油!');
+
+--用户表
+create table user1(
+userid number primary key,
+pwd varchar2(12) not null,
+grade number default 1
+);
+
+--用户数据
+insert into user1 values(111,'111',1);
+insert into user1 values(222,'222',2);
+insert into user1 values(333,'333',3);
+
+////
+create sequence users_seq
+start with 10
+increment by 1
+minvalue 1
+nomaxvalue
+nocache
+nocycle
